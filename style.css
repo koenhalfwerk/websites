@@ -134,20 +134,15 @@ h3 {
 
 @media (min-width: 769px) {
     .main-content {
-        display: flex;
-        justify-content: space-between;
+        /* Removed display: flex */
     }
 
     .left-panel {
-        width: 65%;
-        padding-right: 30px;
+        width: 100%; /* Make left panel full width */
+        padding-right: 0; /* Remove padding */
     }
 
-    .right-panel {
-        width: 35%;
-        padding-left: 30px;
-        border-left: 1px solid #ddd;
-    }
+    /* Removed .right-panel rules as it's no longer needed */
 }
 
 .download-button {
@@ -172,6 +167,10 @@ h3 {
     }
 
     h2 {
+        break-before: page;
+    }
+
+    .page-break-before-methos {
         break-before: page;
     }
 }
