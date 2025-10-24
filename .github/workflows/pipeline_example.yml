@@ -1,0 +1,28 @@
+name: GitHub Actions Pipeline Example
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1_generate_variable:
+    runs-on: ubuntu-latest
+    outputs:
+      my_variable: ${{ steps.set_variable.outputs.value }}
+    steps:
+      - name: Set a variable
+        id: set_variable
+        run: echo "value=Hello from Job 1!" >> $GITHUB_OUTPUT
+
+  job2_consume_variable_parallel_1:
+    runs-on: ubuntu-latest
+    needs: job1_generate_variable
+    steps:
+      - name: Use the variable from Job 1
+        run: echo "Received variable: ${{ needs.job1_generate_variable.outputs.my_variable }}"
+
+  job3_consume_variable_parallel_2:
+    runs-on: ubuntu-latest
+    needs: job1_generate_variable
+    steps:
+      - name: Use the variable from Job 1
+        run: echo "Received variable: ${{ needs.job1_generate_variable.outputs.my_variable }}"
