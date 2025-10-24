@@ -19,6 +19,7 @@
                 <span> | </span>
                 <a href="https://nl.linkedin.com/in/koenhalfwerk" target="_blank">LinkedIn</a>
             </div>
+            <button class="download-button no-print" onclick="downloadPDF()">Download as PDF</button>
         </div>
         </header>
 
@@ -108,5 +109,10 @@
             </div>
         </section>
     </div>
+    <script>
+        function downloadPDF() {
+            window.print();
+        }
+    </script>
 </body>
 </html>

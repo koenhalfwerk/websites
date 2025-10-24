@@ -131,3 +131,47 @@ h3 {
         display: none;
     }
 }
+
+@media (min-width: 769px) {
+    .main-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .left-panel {
+        width: 65%;
+        padding-right: 30px;
+    }
+
+    .right-panel {
+        width: 35%;
+        padding-left: 30px;
+        border-left: 1px solid #ddd;
+    }
+}
+
+.download-button {
+    background-color: #0077b5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    float: right;
+}
+
+.download-button:hover {
+    background-color: #005f8a;
+}
+
+@media print {
+    .no-print {
+        display: none;
+    }
+
+    h2 {
+        break-before: page;
+    }
+}
