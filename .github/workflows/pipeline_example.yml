@@ -18,11 +18,11 @@ jobs:
     needs: job1_generate_variable
     steps:
       - name: Use the variable from Job 1
-        run: echo "Received variable: ${{ needs.job1_generate_variable.outputs.my_variable }}"
+        run: "Received variable: ${{ needs.job1_generate_variable.outputs.my_variable }}"
 
   job3_consume_variable_parallel_2:
     runs-on: ubuntu-latest
     needs: job1_generate_variable
     steps:
       - name: Use the variable from Job 1
-        run: echo "Received variable: ${{ needs.job1_generate_variable.outputs.my_variable }}"
+        run: "Received variable: ${{ needs.job1_generate_variable.outputs.my_variable }}"
